@@ -4,7 +4,7 @@ import { useExpense } from '../context/ExpenseContext'
 import { CiDark } from "react-icons/ci";
 import { CiLight } from "react-icons/ci";
 const DashboardLayout = ({children}) => {
-   const {handleMode,mode,textColor}=useExpense()
+   const {mode}=useExpense()
   return (
     <div className='min-h-screen bg-gray-50'>
       <Toaster position='top-right' toastOptions={{
@@ -28,7 +28,6 @@ const DashboardLayout = ({children}) => {
             <h1 className='text-3xl font-bold text-expense'>Budget wow tracker</h1>
   
             <p className='hidden md:block text-gray-500'>Track your expenses with ease</p>
-            <button onClick={()=>handleMode()}  className={`ml-3 ${textColor} text-3xl `}> {mode==="bg-white"?<CiDark/> :<CiLight/>}</button>
             </div>
         </div>
         

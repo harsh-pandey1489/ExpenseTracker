@@ -59,7 +59,7 @@ export const ExpenseProvider = ({ children }) => {
     }, [state.expenses])
 
 
-    const [mode,setmode]=useState("bg-black")
+    const [mode,setmode]=useState("bg-white")
     const [textColor,setTextColor]=useState("text-white")
 
     return <ExpenseContext.Provider value={{
@@ -82,13 +82,13 @@ export const ExpenseProvider = ({ children }) => {
         handleMode:()=>{
            if(mode =="bg-black"){
             setmode("bg-white")
-             setTextColor("text-white")
+             setTextColor("text-black")
            
            } 
            else{
             setmode("bg-black")
-           
-             setTextColor("text-black")
+            setTextColor("text-white")
+            
            }
         },
         mode
