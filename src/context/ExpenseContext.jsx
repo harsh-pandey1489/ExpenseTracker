@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useReducer } from 'react'
+import React, { createContext, useContext, useEffect, useReducer, useState } from 'react'
 
 const ExpenseContext = createContext();
 
@@ -59,6 +59,9 @@ export const ExpenseProvider = ({ children }) => {
     }, [state.expenses])
 
 
+    const [mode,setmode]=useState("bg-black")
+    const [textColor,setTextColor]=useState("text-white")
+
     return <ExpenseContext.Provider value={{
         ...state,
         addExpense: (expense) => {
@@ -74,7 +77,21 @@ export const ExpenseProvider = ({ children }) => {
         } ,
          updateExpense:(expense)=>{
           dispatch({type:"UPDATE_EXPENSE",payload:expense})
-        } 
+        } ,
+
+        handleMode:()=>{
+           if(mode =="bg-black"){
+            setmode("bg-white")
+             setTextColor("text-white")
+           
+           } 
+           else{
+            setmode("bg-black")
+           
+             setTextColor("text-black")
+           }
+        },
+        mode
 
     }}
     >
