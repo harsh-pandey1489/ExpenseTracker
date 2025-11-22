@@ -6,7 +6,7 @@ const ExpenseForm = () => {
     const { addExpense } = useExpense();
     const [description, setDescription] = useState('')
     const [amount, setAmount] = useState('')
-    const [category, setCategory] = useState("Food");
+    const [category, setCategory] = useState("food");
     const [date, setDate] = useState(new Date().toISOString().split("T")[0])
     const [isSubmitting, setIssubmitting] = useState(false);
 

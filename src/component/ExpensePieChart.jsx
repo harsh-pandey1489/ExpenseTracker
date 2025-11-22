@@ -9,7 +9,9 @@ const CATEGORY_COLORS = {
   Utilities: "#1488A6",
   Other: "#647488",
   Health: "#22C55E",
-}
+};
+
+
 
 const ExpensePieChart = ({ data }) => {
 
@@ -61,7 +63,8 @@ const ExpensePieChart = ({ data }) => {
           {data.map((entry, index) => (
             <Cell
               key={`cell-${index}`}
-              fill={getColor(entry.name)}
+             fill={getColor(entry.name)}
+
             />
           ))}
 
